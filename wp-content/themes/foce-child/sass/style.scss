@@ -1,3 +1,10 @@
+#page{
+  position: relative;
+  height: 100%;
+}
+main {
+ // overflow: hidden;
+}
 @keyframes mov-banner {
   0% {
     transform: translateY(-500px);
@@ -357,38 +364,163 @@ ul:after {
 h2::after {
   animation: rotation 10s linear infinite;
 }
-/*animation des titres*/
-#story h2 span,
+
+#histoire h2 span,
 #characters h3 span,
 #studio h2 span {
   position: absolute;
   opacity: 0;
   z-index: 4;
 }
-#story{
-  h2{
+/***    section histoire    *****/
+#histoire{
+  position: relative;
+  opacity: 0;
+  .story__article{
+    margin-left: 25rem;
+  }
+   h2{
     position: relative;
     width: 100%;
     height: 13rem;
     z-index: -1;
-    &::before{
+    span{
+      position: absolute;
+      top: 3rem;
+      left: 42rem;
+      opacity: 0;
+      z-index: 4;
+    }
+   &::before{
+      position: absolute;
+      content: url('../assets/images/sunflower_leaves.png');
       height: 203px;
       width: 203px;
       top: 7rem;
-      left: 2rem;
+      left: 0rem;
+      
     }
     &::after{
+      position: absolute;
+      content: url('../assets/images/Sunflower.png');
       width: 154px;
       height: 154px;
-      left: 5rem;
+      top: 27rem;
+      left: 2.8rem;
     }
-    span{
-      top: 3rem;
-      left: 42rem;
+    
+  }
+}
+
+
+
+/****    article personnage   *****/
+
+#characters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10rem;
+  z-index: 20;
+   h3 {
+    height: 12.6rem;
+    width: 40%;
+    position: relative;
+    background-image: url("../assets/images/orange_characters_bg.png");
+    span {
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      opacity: 0;
+      z-index: 4;
     }
   }
 }
+/*****     swiperjs-effet cover flow      ******/
+.swiper {
+  width: 100%;
+  opacity: 1;
+  overflow: hidden;
+  margin-bottom: 10rem; 
+  &-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    figure {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
+/*******    article place      ********/
+#place{
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 699px;
+  background-image: url('../assets/images/Studio_Koukaki-image_place.png');
+  background-size: cover;
+  h3{
+    position: relative;
+    width: 60%;
+    height: 13rem;
+    background-image: url("../assets/images/orange_place_bg.png");
+    margin-bottom: -1em;
+    span{
+      position: absolute;
+      top: 4.5rem;
+      right: 8rem;
+      opacity: 0;
+    }
+  }
+  > div {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 6em;
+    p {
+      padding-left: 5em;
+    }
+  }
+  .place__big-cloud{
+    height: 7.6rem;
+    top: 5.5rem;
+    
+  }
+  .place__little-cloud{
+    height: 4rem;
+    top: 16.5rem;
+    
+  }
+ 
+}
+.place__big-cloud, .place__little-cloud{
+  position: absolute;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  z-index: 2;
+  opacity: 0;
+  
+}
+
+/****   section studio   ****/
 #studio{
+  opacity: 0;
   h2{
     width: 100%;
     height: 13rem;
@@ -404,22 +536,14 @@ h2::after {
     span{
       top: 25%;
       left: 35%;
-  }
-}
-}
-#place{
-  h3{
-    position: relative;
-    width: 60%;
-    height: 13rem;
-    span{
       position: absolute;
-      top: 4.5rem;
-      right: 8rem;
       opacity: 0;
-    }
+      z-index: 4;
   }
 }
+}
+
+/*    keyframes pour animmation des section et titre    */
 @keyframes animationTitre {
   0% {
     transform: translateY(50%);
@@ -430,101 +554,96 @@ h2::after {
     opacity: 1;
   }
 }
-.animation-titre{
-  animation: animationTitre 1s 1s forwards;
-}
-
-/*le titre personnage*/
-
-#characters {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  div {
-    flex: none;
-  }
-  h3 {
-    height: 12.6rem;
-    width: 40%;
-    position: relative;
-    span {
-      top: 30%;
-      left: 16%;
-    }
-  }
-}
-
-/*****     swiperjs-effet cover flow      ******/
-.swiper-container {
-  width: 100%;
- 
-  opacity: 1;
-  margin-bottom: 7em;
-  overflow: hidden;
-
-  &-slide {
-    background-position: center;
-    background-size: cover;
-    width: 400px;
-    height: 440px;
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    figure {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }img{
-    width: 400px; 
-    height: 440px;
-  }
-}
-
-/*******    section place      ********/
-.story #place{
-  position: relative;
-  background-image: url('../assets/images/Studio_Koukaki-image_place.png');
-  .place__big-cloud{
-    height: 7.6rem;
-    top: 5.5rem;
-   
-  }
-  .place__little-cloud{
-    height: 3.4rem;
-    top: 16.5rem;
-   
-  }
- 
-}
-.place__active-clouds{
-    
-  animation: movNuage 2s;
- }
-.place__big-cloud, .place__little-cloud{
-  position: absolute;
-  filter: blur(12px);
-  -webkit-filter: blur(12px);
-  -moz-filter: blur(12px);
-  z-index: 2;
-  right: -20%;
-  opacity: 1;
-}
-@keyframes movNuage{
-  0%{
-    transform: translateX(-20%);
+@keyframes mov-section {
+  0% {
+    transform: translateY(500px);
     opacity: 0;
   }
-  100%{
-    transform: translateX(20%);
+  100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }
+/*  mouvement des nuages    */
+@keyframes movBigNuage{
+  0%{
+    transform: translateX(500%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(250%);
+    opacity: 1;
+  }
+}
+@keyframes movLittleNuage{
+  0%{
+    transform: translateX(1000%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(270%);
+    opacity: 1;
+  }
+}
+/*    animation des sections et titres     */
+.active-story{
+  animation: mov-section 1.5s both;     // section story
+      .animation-titre-story{
+      animation: animationTitre 1s 1s forwards;     // titre story
+  }
+}
+.active-characters{
+  .animation-titre-characters{
+    animation: animationTitre 1s forwards;      // titre characters
+  }
+}
+.active-place{
+ .animation-titre-place{    
+  animation: animationTitre 1s forwards;    // titre place
+}
+.place__big-cloud{
+  animation: movBigNuage 3s both;    // gros nuage
+}
+.place__little-cloud{
+  animation: movLittleNuage 3s both;    // petit nuage
+}
+}
+.active-studio{
+  animation: mov-section 1.5s both;     // section studio
+  .animation-titre-studio{
+    animation: animationTitre 1s 1s forwards;    // titte studio
+  }
+}
+.active-nomination{
+  .animation-titre-nomination{
+    position: absolute;
+    animation: animationTitre 2s forwards;
+  }
+}
+.active-footer{
+  animation: mov-section 1.5s both;     // footer
+}
+
+
+
+
+/*.swiper{
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    img{
+      display: block;
+      width: 100%;
+  }
+}
+}*/
+
+
 
 
 /*******  section nomination     ******/
@@ -538,17 +657,25 @@ h2::after {
   margin-top: 10rem;
   
   &__title {
-    width: 50%;
-    color: #fff5e9;
+    position: relative;
+    width: 70%;
     text-align: left;
     padding: 10rem 5rem;
-    font-family: "Quicksand", sans-serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-    line-height: 3rem;
-    letter-spacing: -0.02rem;
     background-image: url('../assets/images/orange_nomination.png');
     opacity: 0.9;
+    span{
+      width: 60%;
+      top: 5rem;
+      left: 15rem;
+      font-family: "Quicksand", sans-serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 3rem;
+      color: #fff5e9;
+      letter-spacing: -0.02rem;
+      opacity: 0;
+
+    }
   }
   &__logo{
     background-color: #fff5e9;
@@ -573,6 +700,9 @@ h2::after {
     animation: rotation 10s linear infinite;
     
   }
+}
+.site-footer{
+  opacity: 0;
 }
 .site-footer::before, .site-footer::after{
   content: '';
