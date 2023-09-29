@@ -62,6 +62,7 @@
 body {
   background-color: #fff5e9;
 }
+
 body main {
   margin: 0 auto !important;
   overflow: hidden;
@@ -97,6 +98,7 @@ body main {
   position: relative;
   z-index: 2;
 }
+
 .main-navigation .site-title {
   list-style: none;
 }
@@ -117,6 +119,7 @@ body main {
   right: 3em;
   cursor: pointer;
 }
+
 .menu-toggle .line {
   height: 2px;
   background-color: #000;
@@ -145,6 +148,7 @@ body main {
   transform: translateY(-100%);
   transition: transform 2s;
 }
+
 .menu__content::after {
   content: url("../assets/images/orchid.png");
   position: absolute;
@@ -152,6 +156,7 @@ body main {
   top: 5rem;
   animation: rotation 10s linear infinite;
 }
+
 @media all and (max-width: 700px) {
   .menu__content::after {
     content: "";
@@ -164,6 +169,7 @@ body main {
   -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
   -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
 }
+
 .menu__content ul {
   margin-top: 40px;
   position: relative;
@@ -174,26 +180,31 @@ body main {
   height: 300px;
   gap: 1em;
 }
+
 .menu__content ul li {
   list-style: none;
 }
+
 .menu__content ul li a {
   font-family: "roboto mono";
   font-size: calc(2rem + 1.5vw);
   line-height: 5.3rem;
   text-decoration: none;
 }
+
 .menu__content ul li a:hover {
   filter: drop-shadow(0px 0px 5px #ff5c00);
   -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
   -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
 }
+
 .menu__content--histoire::before {
   content: url("../assets/images/cat-1.png");
   position: absolute;
   right: 40rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--histoire::before {
     content: "";
@@ -206,6 +217,7 @@ body main {
   bottom: 18rem;
   animation: rotation 10s linear infinite;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--histoire::after {
     content: "";
@@ -218,6 +230,7 @@ body main {
   top: 5rem;
   animation: rotation 10s linear infinite;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--characters::after {
     content: "";
@@ -229,6 +242,7 @@ body main {
   right: 55rem;
   animation: rotation 10s linear infinite;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--place::before {
     content: "";
@@ -241,6 +255,7 @@ body main {
   left: 45rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--place::after {
     content: "";
@@ -252,9 +267,11 @@ body main {
   text-align: center;
   margin-top: 200px;
 }
+
 .menu__content--link-footer a {
   text-decoration: none;
 }
+
 .menu__content--link-footer::before {
   content: url("../assets/images/cat-2.png");
   position: absolute;
@@ -262,6 +279,7 @@ body main {
   left: 7rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--link-footer::before {
     content: "";
@@ -274,12 +292,12 @@ body main {
   top: 37rem;
   animation: rotation 10s linear infinite;
 }
+
 @media all and (max-width: 700px) {
   .menu__content--link-footer::after {
     content: "";
   }
 }
-
 /*    apparence du menu deroulant     */
 .apparence-menu {
   animation: nav-up 2s both;
@@ -289,9 +307,11 @@ body main {
 .active .menu-toggle .line-1 {
   transform: rotate(45deg) translate(8px, 6px);
 }
+
 .active .menu-toggle .line-2 {
   opacity: 0;
 }
+
 .active .menu-toggle .line-3 {
   transform: rotate(-45deg) translate(8px, -6px);
 }
@@ -306,6 +326,7 @@ body main {
   background-image: none;
   margin: 0 auto;
 }
+
 .banner__logo {
   position: absolute;
   bottom: 0px;
@@ -317,12 +338,14 @@ body main {
   opacity: 1;
   animation: mov-logo 2s 300ms both, float 6s 2s infinite ease-in-out;
 }
+
 .banner__image {
   z-index: -2;
   opacity: 1;
   max-width: 100%;
   overflow: hidden;
 }
+
 @media all and (max-width: 699px) {
   .banner__image {
     z-index: 2;
@@ -334,12 +357,12 @@ body main {
   z-index: 1;
   opacity: 1;
 }
+
 @media all and (max-width: 699px) {
   .banner video {
     opacity: 0;
   }
 }
-
 .banner__image,
 .banner video {
   position: absolute;
@@ -376,15 +399,18 @@ h2::after {
   position: relative;
   opacity: 0;
 }
+
 #histoire .story__article {
   margin-left: 25rem;
 }
+
 #histoire h2 {
   position: relative;
   width: 100%;
   height: 13rem;
   z-index: -1;
 }
+
 #histoire h2 span {
   position: absolute;
   top: 3rem;
@@ -392,6 +418,7 @@ h2::after {
   opacity: 0;
   z-index: 4;
 }
+
 #histoire h2::before {
   position: absolute;
   content: url("../assets/images/sunflower_leaves.png");
@@ -400,6 +427,7 @@ h2::after {
   top: 7rem;
   left: 0rem;
 }
+
 #histoire h2::after {
   position: absolute;
   content: url("../assets/images/Sunflower.png");
@@ -419,12 +447,14 @@ h2::after {
   margin-top: 10rem;
   z-index: 20;
 }
+
 #characters h3 {
   height: 12.6rem;
   width: 40%;
   position: relative;
   background-image: url("../assets/images/orange_characters_bg.png");
 }
+
 #characters h3 span {
   position: absolute;
   top: 30%;
@@ -440,6 +470,7 @@ h2::after {
   overflow: hidden;
   margin-bottom: 10rem;
 }
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -450,6 +481,7 @@ h2::after {
   justify-content: center;
   align-items: center;
 }
+
 .swiper-slide figure {
   display: block;
   width: 100%;
@@ -466,6 +498,7 @@ h2::after {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   background-size: cover;
 }
+
 #place h3 {
   position: relative;
   width: 60%;
@@ -473,12 +506,14 @@ h2::after {
   background-image: url("../assets/images/orange_place_bg.png");
   margin-bottom: -1em;
 }
+
 #place h3 span {
   position: absolute;
   top: 4.5rem;
   right: 8rem;
   opacity: 0;
 }
+
 #place > div {
   max-width: 580px;
   display: flex;
@@ -487,13 +522,16 @@ h2::after {
   align-items: flex-start;
   margin-left: 6em;
 }
+
 #place > div p {
   padding-left: 5em;
 }
+
 #place .place__big-cloud {
   height: 7.6rem;
   top: 5.5rem;
 }
+
 #place .place__little-cloud {
   height: 4rem;
   top: 16.5rem;
@@ -512,19 +550,23 @@ h2::after {
 #studio {
   opacity: 0;
 }
+
 #studio h2 {
   width: 100%;
   height: 13rem;
   position: relative;
 }
+
 #studio h2::before {
   width: 203px;
   height: 203px;
 }
+
 #studio h2::after {
   width: 109px;
   height: 109px;
 }
+
 #studio h2 span {
   top: 25%;
   left: 35%;
@@ -579,6 +621,7 @@ h2::after {
 .active-story {
   animation: mov-section 1.5s both;
 }
+
 .active-story .animation-titre-story {
   animation: animationTitre 1s 1s forwards;
 }
@@ -590,9 +633,11 @@ h2::after {
 .active-place .animation-titre-place {
   animation: animationTitre 1s forwards;
 }
+
 .active-place .place__big-cloud {
   animation: movBigNuage 3s both;
 }
+
 .active-place .place__little-cloud {
   animation: movLittleNuage 3s both;
 }
@@ -600,6 +645,7 @@ h2::after {
 .active-studio {
   animation: mov-section 1.5s both;
 }
+
 .active-studio .animation-titre-studio {
   animation: animationTitre 1s 1s forwards;
 }
@@ -613,21 +659,6 @@ h2::after {
   animation: mov-section 1.5s both;
 }
 
-/*.swiper{
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  &-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    img{
-      display: block;
-      width: 100%;
-  }
-}
-}*/
 /*******  section nomination     ******/
 .nomination {
   width: 100%;
@@ -638,6 +669,7 @@ h2::after {
   gap: 6rem;
   margin-top: 10rem;
 }
+
 .nomination__title {
   position: relative;
   width: 70%;
@@ -646,6 +678,7 @@ h2::after {
   background-image: url("../assets/images/orange_nomination.png");
   opacity: 0.9;
 }
+
 .nomination__title span {
   width: 60%;
   top: 5rem;
@@ -658,9 +691,11 @@ h2::after {
   letter-spacing: -0.02rem;
   opacity: 0;
 }
+
 .nomination__logo {
   background-color: #fff5e9;
 }
+
 .nomination::before {
   content: url("../assets/images/sunflower.png");
   position: absolute;
@@ -670,6 +705,7 @@ h2::after {
   bottom: 25rem;
   animation: rotation 10s linear infinite;
 }
+
 .nomination::after {
   content: url("../assets/images/orchid.png");
   position: absolute;
@@ -687,5 +723,7 @@ h2::after {
 .site-footer::before, .site-footer::after {
   content: "";
 }
+
+
 
 /*# sourceMappingURL=theme.css.map */

@@ -26,8 +26,6 @@ get_header();
             </div>
         </article>
     </section>
-    <?php get_template_part('template-parts/essai'); ?>
-
     <section id="studio">
         <h2><span class="animation-titre-studio">Studio Koukaki</span></h2>
         <div>
