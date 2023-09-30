@@ -1,8 +1,3 @@
-#page {
-  position: relative;
-  height: 100%;
-}
-
 @keyframes mov-banner {
   0% {
     transform: translateY(-500px);
@@ -14,9 +9,11 @@
 @keyframes mov-logo {
   0% {
     transform: translateY(300px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 @keyframes float {
@@ -59,15 +56,6 @@
 }
 /**********animation des titres**********/
 /*******************************************/
-body {
-  background-color: #fff5e9;
-}
-
-body main {
-  margin: 0 auto !important;
-  overflow: hidden;
-}
-
 /***** menue-navigation****/
 @keyframes nav-up {
   0% {
@@ -89,21 +77,70 @@ body main {
     opacity: 0;
   }
 }
+#page {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  background-color: #fff5e9;
+}
+body main {
+  margin: 0 auto !important;
+  overflow: hidden;
+}
+
+/*****  header    ********/
+.site-header {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/****     nav bar     ****/
 .main-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  height: 80px;
   width: 100%;
   position: relative;
   z-index: 2;
 }
-
-.main-navigation .site-title {
+@media all and (max-width: 700px) {
+  .main-navigation ul {
+    display: flex;
+    justify-content: center;
+    margin-right: 30rem;
+  }
+}
+@media all and (max-width: 574px) {
+  .main-navigation ul {
+    margin-right: 20rem;
+  }
+}
+.main-navigation ul .site-title {
   list-style: none;
 }
+@media all and (max-width: 700px) {
+  .main-navigation ul .site-title {
+    display: flex;
+    font-size: 1.2rem;
+  }
+}
+@media all and (max-width: 574px) {
+  .main-navigation ul .site-title {
+    font-size: 0.8rem;
+  }
+}
 
-/*       boutton       */
+/****       boutton       *****/
 .menu-toggle {
   position: absolute;
   display: flex;
@@ -119,7 +156,6 @@ body main {
   right: 3em;
   cursor: pointer;
 }
-
 .menu-toggle .line {
   height: 2px;
   background-color: #000;
@@ -129,26 +165,59 @@ body main {
   transition: all 0.1s ease-in-out;
 }
 
-/*** style du menu deroulant   ****/
+/***   menu deroulant   ****/
 .menu__content {
   position: relative;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   overflow: hidden;
-  width: 75.7%;
+  width: 100%;
+  max-width: 1440px;
   height: 91vh;
-  margin: 0 auto;
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 50px;
   padding-bottom: 50px;
   background-color: #fff5e9;
   z-index: 1;
   transform: translateY(-100%);
   transition: transform 2s;
 }
-
+.menu__content img {
+  margin: 60px;
+  width: 154px;
+  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+  -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+}
+.menu__content ul {
+  padding-left: 0 !important;
+  margin-top: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  gap: 1em;
+}
+.menu__content ul li {
+  list-style: none;
+}
+.menu__content ul li a {
+  font-family: "roboto mono";
+  font-size: calc(2rem + 1.5vw);
+  line-height: 5.3rem;
+  text-decoration: none;
+}
+.menu__content ul li a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+}
 .menu__content::after {
   content: url("../assets/images/orchid.png");
   position: absolute;
@@ -156,46 +225,10 @@ body main {
   top: 5rem;
   animation: rotation 10s linear infinite;
 }
-
 @media all and (max-width: 700px) {
   .menu__content::after {
     content: "";
   }
-}
-.menu__content img {
-  margin: 40px;
-  width: 154px;
-  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-  -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-  -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
-}
-
-.menu__content ul {
-  margin-top: 40px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 300px;
-  gap: 1em;
-}
-
-.menu__content ul li {
-  list-style: none;
-}
-
-.menu__content ul li a {
-  font-family: "roboto mono";
-  font-size: calc(2rem + 1.5vw);
-  line-height: 5.3rem;
-  text-decoration: none;
-}
-
-.menu__content ul li a:hover {
-  filter: drop-shadow(0px 0px 5px #ff5c00);
-  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
-  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
 }
 
 .menu__content--histoire::before {
@@ -204,12 +237,12 @@ body main {
   right: 40rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--histoire::before {
     content: "";
   }
 }
+
 .menu__content--histoire::after {
   content: url("../assets/images/Sunflower.png");
   position: absolute;
@@ -217,12 +250,12 @@ body main {
   bottom: 18rem;
   animation: rotation 10s linear infinite;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--histoire::after {
     content: "";
   }
 }
+
 .menu__content--characters::after {
   content: url("../assets/images/random_flower.png");
   position: absolute;
@@ -230,24 +263,24 @@ body main {
   top: 5rem;
   animation: rotation 10s linear infinite;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--characters::after {
     content: "";
   }
 }
+
 .menu__content--place::before {
   content: url("../assets/images/flower.png");
   position: absolute;
   right: 55rem;
   animation: rotation 10s linear infinite;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--place::before {
     content: "";
   }
 }
+
 .menu__content--place::after {
   content: url("../assets/images/cat-3.png");
   position: absolute;
@@ -255,23 +288,21 @@ body main {
   left: 45rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--place::after {
     content: "";
   }
 }
+
 .menu__content--link-footer {
   width: 100%;
   display: block;
   text-align: center;
   margin-top: 200px;
 }
-
 .menu__content--link-footer a {
   text-decoration: none;
 }
-
 .menu__content--link-footer::before {
   content: url("../assets/images/cat-2.png");
   position: absolute;
@@ -279,7 +310,6 @@ body main {
   left: 7rem;
   animation: float 6s 100ms infinite ease-in-out;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--link-footer::before {
     content: "";
@@ -292,12 +322,12 @@ body main {
   top: 37rem;
   animation: rotation 10s linear infinite;
 }
-
 @media all and (max-width: 700px) {
   .menu__content--link-footer::after {
     content: "";
   }
 }
+
 /*    apparence du menu deroulant     */
 .apparence-menu {
   animation: nav-up 2s both;
@@ -321,12 +351,10 @@ body main {
   box-sizing: border-box;
   position: relative;
   object-fit: contain;
-  height: 800px;
-  width: 100%;
+  max-width: 100%;
   background-image: none;
-  margin: 0 auto;
+  margin: auto;
 }
-
 .banner__logo {
   position: absolute;
   bottom: 0px;
@@ -335,34 +363,33 @@ body main {
   max-width: 100%;
   position: sticky;
   z-index: 5;
-  opacity: 1;
   animation: mov-logo 2s 300ms both, float 6s 2s infinite ease-in-out;
 }
-
 .banner__image {
   z-index: -2;
   opacity: 1;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1440px;
   overflow: hidden;
 }
-
-@media all and (max-width: 699px) {
+@media all and (max-width: 700px) {
   .banner__image {
     z-index: 2;
   }
 }
 .banner video {
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
   z-index: 1;
   opacity: 1;
 }
-
-@media all and (max-width: 699px) {
+@media all and (max-width: 700px) {
   .banner video {
     opacity: 0;
   }
 }
+
 .banner__image,
 .banner video {
   position: absolute;
@@ -386,31 +413,20 @@ h2::after {
   animation: rotation 10s linear infinite;
 }
 
-#histoire h2 span,
-#characters h3 span,
-#studio h2 span {
-  position: absolute;
-  opacity: 0;
-  z-index: 4;
-}
-
 /***    section histoire    *****/
 #histoire {
   position: relative;
   opacity: 0;
 }
-
 #histoire .story__article {
   margin-left: 25rem;
 }
-
 #histoire h2 {
   position: relative;
   width: 100%;
   height: 13rem;
   z-index: -1;
 }
-
 #histoire h2 span {
   position: absolute;
   top: 3rem;
@@ -418,7 +434,6 @@ h2::after {
   opacity: 0;
   z-index: 4;
 }
-
 #histoire h2::before {
   position: absolute;
   content: url("../assets/images/sunflower_leaves.png");
@@ -427,7 +442,6 @@ h2::after {
   top: 7rem;
   left: 0rem;
 }
-
 #histoire h2::after {
   position: absolute;
   content: url("../assets/images/Sunflower.png");
@@ -447,14 +461,12 @@ h2::after {
   margin-top: 10rem;
   z-index: 20;
 }
-
 #characters h3 {
   height: 12.6rem;
   width: 40%;
   position: relative;
   background-image: url("../assets/images/orange_characters_bg.png");
 }
-
 #characters h3 span {
   position: absolute;
   top: 30%;
@@ -470,7 +482,6 @@ h2::after {
   overflow: hidden;
   margin-bottom: 10rem;
 }
-
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -481,7 +492,6 @@ h2::after {
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide figure {
   display: block;
   width: 100%;
@@ -498,7 +508,6 @@ h2::after {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   background-size: cover;
 }
-
 #place h3 {
   position: relative;
   width: 60%;
@@ -506,14 +515,12 @@ h2::after {
   background-image: url("../assets/images/orange_place_bg.png");
   margin-bottom: -1em;
 }
-
 #place h3 span {
   position: absolute;
   top: 4.5rem;
   right: 8rem;
   opacity: 0;
 }
-
 #place > div {
   max-width: 580px;
   display: flex;
@@ -522,22 +529,17 @@ h2::after {
   align-items: flex-start;
   margin-left: 6em;
 }
-
-#place > div p {
-  padding-left: 5em;
-}
-
 #place .place__big-cloud {
   height: 7.6rem;
   top: 5.5rem;
 }
-
 #place .place__little-cloud {
   height: 4rem;
   top: 16.5rem;
 }
 
-.place__big-cloud, .place__little-cloud {
+.place__big-cloud,
+.place__little-cloud {
   position: absolute;
   filter: blur(12px);
   -webkit-filter: blur(12px);
@@ -550,29 +552,25 @@ h2::after {
 #studio {
   opacity: 0;
 }
-
 #studio h2 {
   width: 100%;
   height: 13rem;
   position: relative;
 }
-
-#studio h2::before {
-  width: 203px;
-  height: 203px;
-}
-
-#studio h2::after {
-  width: 109px;
-  height: 109px;
-}
-
 #studio h2 span {
   top: 25%;
   left: 35%;
   position: absolute;
   opacity: 0;
   z-index: 4;
+}
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+#studio h2::after {
+  width: 109px;
+  height: 109px;
 }
 
 /*    keyframes pour animmation des section et titre    */
@@ -669,7 +667,6 @@ h2::after {
   gap: 6rem;
   margin-top: 10rem;
 }
-
 .nomination__title {
   position: relative;
   width: 70%;
@@ -678,7 +675,6 @@ h2::after {
   background-image: url("../assets/images/orange_nomination.png");
   opacity: 0.9;
 }
-
 .nomination__title span {
   width: 60%;
   top: 5rem;
@@ -691,11 +687,9 @@ h2::after {
   letter-spacing: -0.02rem;
   opacity: 0;
 }
-
 .nomination__logo {
   background-color: #fff5e9;
 }
-
 .nomination::before {
   content: url("../assets/images/sunflower.png");
   position: absolute;
@@ -705,7 +699,6 @@ h2::after {
   bottom: 25rem;
   animation: rotation 10s linear infinite;
 }
-
 .nomination::after {
   content: url("../assets/images/orchid.png");
   position: absolute;
@@ -716,11 +709,14 @@ h2::after {
   animation: rotation 10s linear infinite;
 }
 
+/****   footer   ****/
 .site-footer {
   opacity: 0;
 }
 
-.site-footer::before, .site-footer::after {
+/*****  supression des fleurs footer    ****/
+.site-footer::before,
+.site-footer::after {
   content: "";
 }
 

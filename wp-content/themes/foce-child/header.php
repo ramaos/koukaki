@@ -28,7 +28,7 @@
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'foce'); ?></a>
 
 
-        <header id="masthead" class="site-header">
+        <header id="" class="site-header">
             <nav id="main-navigation" class="main-navigation">
                 <ul>
                     <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
@@ -38,7 +38,7 @@
                     <span class="line line-2"></span>
                     <span class="line line-3"></span>
                 </button>
-            </nav><!-- #site-navigation -->
+            </nav><!-- #main-navigation -->
             <div class="menu__content">
                 <img src="wp-content/themes/foce-child/assets/images/logo.png" alt="">
                 <ul>
