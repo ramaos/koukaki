@@ -59,7 +59,6 @@
   }
 }
 
-
 /*****   translate du menu deroulant   ****/
 @keyframes nav-up {
   0% {
@@ -92,7 +91,6 @@
 body {
   background-color: #fff5e9;
   main {
-    margin: 0 auto !important;
     overflow: hidden;
   }
 }
@@ -336,7 +334,15 @@ body {
   max-width: 100%;
   background-image: none;
   margin: auto;
-   &__logo {
+  @media all and (max-width: 700px) {
+    min-height: 600px !important;
+    height: auto !important;
+    width: 100vw;
+  }
+  @media all and (max-width: 580px) {
+    min-height: 400px !important;
+  }
+  &__logo {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -345,15 +351,23 @@ body {
     position: sticky;
     z-index: 5;
     animation: mov-logo 2s 300ms both, float 6s 2s infinite ease-in-out;
+    @media all and (max-width: 700px) {
+      width: 70%;
+    }
   }
   &__image {
     z-index: -2;
-    opacity: 1;
+    opacity: 0;
     width: 100%;
     max-width: 1440px;
     overflow: hidden;
     @media all and (max-width: 700px) {
       z-index: 2;
+      opacity: 1;
+      min-width: 1200px;
+    }
+    @media all and (max-width: 580px) {
+      min-width: 900px !important;
     }
   }
   video {
@@ -394,21 +408,72 @@ h2::after {
 /***    section histoire    *****/
 #histoire {
   position: relative;
+  text-align: center;
   opacity: 0;
   .story__article {
-    margin-left: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+    font-size: 15px;
+    padding-bottom: 2em;
+    margin: 0 auto;
+
+    &::before {
+      left: 50%;
+      top: 8em;
+      @media all and (max-width: 1192px) {
+        left: 40%;
+        top: 9%;
+      }
+    }
+    &::after {
+      left: calc(50% + 414px);
+      top: 2em;
+      @media all and (max-width: 1192px) {
+        left: calc(40% + 414px);
+        top: 5%;
+      }
+    }
   }
   h2 {
     position: relative;
     width: 100%;
     height: 13rem;
-    z-index: -1;
+    background-color: transparent;
+    z-index: 1;
+
+    @media all and (max-width: 700px) and (min-width: 480px) {
+      height: 7rem;
+    }
+    @media all and (max-width: 480px) {
+      height: 7rem;
+    }
     span {
+      color: #fff5e9;
       position: absolute;
-      top: 3rem;
-      left: 42rem;
+      top: 25%;
+      left: 40%;
       opacity: 0;
-      z-index: 4;
+      @media all and (max-width: 1192px) and (min-width: 920px) {
+        top: 25%;
+        left: 38%;
+      }
+      @media all and (max-width: 920px) and (min-width: 700px) {
+        top: 25%;
+        left: 35%;
+      }
+      @media all and (max-width: 700px) and (min-width: 480px) {
+        font-size: calc(2.2rem + 0.1vw);
+        top: 30%;
+        left: 40%;
+      }
+      @media all and (max-width: 480px) {
+        font-size: calc(2rem + 0.1vw);
+        top: 30%;
+        left: 33%;
+      }
     }
     &::before {
       position: absolute;
@@ -417,6 +482,14 @@ h2::after {
       width: 203px;
       top: 7rem;
       left: 0rem;
+      z-index: -4;
+      @media all and (max-width: 1192px) {
+        width: 40%;
+        left: 0%;
+      }
+      @media all and (max-width: 920px) {
+        content: "";
+      }
     }
     &::after {
       position: absolute;
@@ -425,6 +498,9 @@ h2::after {
       height: 154px;
       top: 27rem;
       left: 2.8rem;
+      @media all and (max-width: 920px) {
+        content: "";
+      }
     }
   }
 }
@@ -432,23 +508,51 @@ h2::after {
 /****    article personnage   *****/
 #characters {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+
   margin-top: 10rem;
   z-index: 20;
   h3 {
     height: 12.6rem;
-    width: 40%;
+    width: 100%;
     position: relative;
     background-image: url("../assets/images/orange_characters_bg.png");
+    margin-left: -30%;
+    @media all and (max-width: 1192px) and (min-width: 920px) {
+      height: 11.8rem;
+    }
+    @media all and (max-width: 920px) and (min-width: 700px) {
+      height: 11rem;
+      margin-left: -25%;
+    }
+    @media all and (max-width: 700px) and (min-width: 480px) {
+      height: 10rem;
+      margin-left: -20%;
+    }
+    @media all and (max-width: 480px) {
+      height: 10rem;
+      margin-left: -15%;
+    }
     span {
       position: absolute;
       top: 30%;
-      left: 20%;
+      left: 38%;
       opacity: 0;
       z-index: 4;
+      @media all and (max-width: 920px) and (min-width: 700px) {
+        font-size: calc(2.2rem + 0.1vw);
+        top: 34%;
+        left: 37%;
+      }
+      @media all and (max-width: 700px) and (min-width: 480px) {
+        font-size: calc(2.2rem + 0.1vw);
+        top: 33%;
+        left: 30%;
+      }
+      @media all and (max-width: 480px) {
+        left: 23%;
+        top: 34%;
+      }
     }
   }
 }
@@ -485,26 +589,29 @@ h2::after {
   min-height: 699px;
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   background-size: cover;
-  h3 {
-    position: relative;
-    width: 60%;
-    height: 13rem;
-    background-image: url("../assets/images/orange_place_bg.png");
-    margin-bottom: -1em;
-    span {
-      position: absolute;
-      top: 4.5rem;
-      right: 8rem;
-      opacity: 0;
-    }
-  }
+
   > div {
     max-width: 580px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    text-align: start;
     margin-left: 6em;
+    h3 {
+      position: relative;
+      width: 100%;
+      height: 13rem;
+      background-image: url("../assets/images/orange_place_bg.png");
+      margin-bottom: -1em;
+      margin-left: -20%;
+      span {
+        width: 100%;
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        opacity: 0;
+      }
+    }
   }
   .place__big-cloud {
     height: 7.6rem;
@@ -530,24 +637,154 @@ h2::after {
   opacity: 0;
   h2 {
     width: 100%;
-    height: 13rem;
+    height: 15rem;
     position: relative;
+    @media all and (max-width: 700px) and (min-width: 480px) {
+      height: 10rem;
+    }
+    @media all and (max-width: 480px) {
+      height: 7rem;
+    }
     span {
       top: 25%;
       left: 35%;
       position: absolute;
       opacity: 0;
       z-index: 4;
+      @media all and (max-width: 1280px) and (min-width: 920px) {
+        left: 30%;
+      }
+      @media all and (max-width: 920px) and (min-width: 700px) {
+        left: 25%;
+      }
+      @media all and (max-width: 700px) and (min-width: 480px) {
+        left: 25%;
+      }
+      @media all and (max-width: 480px) {
+        font-size: calc(2rem + 0.1vw);
+        top: 32%;
+        left: 20%;
+      }
     }
     &::before {
       width: 203px;
       height: 203px;
+      @media all and (max-width: 920px) {
+        content: "";
+      }
     }
     &::after {
       width: 109px;
       height: 109px;
     }
   }
+}
+/*******  section nomination     ******/
+.nomination {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-top: 10rem;
+  @media all and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 19rem;
+    background-image: url("../assets/images/orange_nomination.png");
+    background-size: contain;
+    opacity: 0.9;
+    span {
+      position: absolute;
+      text-align: left;
+      width: 44rem;
+      top: 25%;
+      left: 25%;
+      font-family: "Quicksand", sans-serif;
+      font-size: calc(2.4rem + 0.1vw);
+      font-weight: 700;
+      line-height: 3rem;
+      color: #fff5e9;
+      letter-spacing: -0.02rem;
+      opacity: 0;
+      @media all and (max-width: 1350px) and (min-width: 1080px) {
+        font-size: calc(2.5rem + 0.1vw);
+        left: 18%;
+      }
+      @media all and (max-width: 1080px) and (min-width: 920px) {
+        width: 35rem;
+        font-size: calc(2.2rem + 0.1vw);
+        left: 15%;
+      }
+      @media all and (max-width: 920px) and (min-width: 820px) {
+        width: 35rem;
+        font-size: calc(2rem + 0.1vw);
+        left: 10%;
+      }
+      @media all and (max-width: 820px) and (min-width: 700px) {
+        width: 25rem;
+        font-size: calc(1rem + 1.5vw);
+        line-height: 2rem;
+        left: 10%;
+      }
+      @media all and (max-width: 700px) and (min-width: 520px) {
+        width: 35rem;
+        font-size: calc(2rem + 0.1vw);
+        left: 10%;
+      }
+      @media all and (max-width: 520px) {
+        width: 20rem;
+        font-size: calc(1rem + 1.5vw);
+        line-height: 1.8rem;
+        left: 10%;
+        top: 35%;
+      }
+    }
+  }
+  &__logo {
+    background-color: #fff5e9;
+  }
+  &::before {
+    content: url("../assets/images/sunflower.png");
+    position: absolute;
+    width: 154px;
+    height: 154px;
+    left: 0rem;
+    bottom: 25rem;
+    animation: rotation 10s linear infinite;
+    @media all and (max-width: 920px) {
+      content: "";
+    }
+  }
+  &::after {
+    content: url("../assets/images/orchid.png");
+    position: absolute;
+    width: 173px;
+    height: 173px;
+    left: 94.5rem;
+    bottom: 25rem;
+    animation: rotation 10s linear infinite;
+    @media all and (max-width: 920px) {
+      content: "";
+    }
+  }
+}
+/****   footer   ****/
+.site-footer {
+  opacity: 0;
+}
+/*****  supression des fleurs footer    ****/
+.site-footer::before,
+.site-footer::after {
+  content: "";
 }
 
 /*    keyframes pour animmation des section et titre    */
@@ -632,67 +869,6 @@ h2::after {
 
 .active-footer {
   animation: mov-section 1.5s both;
-}
-
-/*******  section nomination     ******/
-.nomination {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-  margin-top: 10rem;
-  &__title {
-    position: relative;
-    width: 70%;
-    text-align: left;
-    padding: 10rem 5rem;
-    background-image: url("../assets/images/orange_nomination.png");
-    opacity: 0.9;
-    span {
-      width: 60%;
-      top: 5rem;
-      left: 15rem;
-      font-family: "Quicksand", sans-serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 3rem;
-      color: #fff5e9;
-      letter-spacing: -0.02rem;
-      opacity: 0;
-    }
-  }
-  &__logo {
-    background-color: #fff5e9;
-  }
-  &::before {
-    content: url("../assets/images/sunflower.png");
-    position: absolute;
-    width: 154px;
-    height: 154px;
-    left: 0rem;
-    bottom: 25rem;
-    animation: rotation 10s linear infinite;
-  }
-  &::after {
-    content: url("../assets/images/orchid.png");
-    position: absolute;
-    width: 173px;
-    height: 173px;
-    left: 94.5rem;
-    bottom: 25rem;
-    animation: rotation 10s linear infinite;
-  }
-}
-/****   footer   ****/
-.site-footer {
-  opacity: 0;
-}
-/*****  supression des fleurs footer    ****/
-.site-footer::before,
-.site-footer::after {
-  content: "";
 }
 
 /*# sourceMappingURL=style.scss.map */

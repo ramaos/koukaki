@@ -7,7 +7,7 @@ get_header();
     <section class="banner">
         <img class="banner__image" src="wp-content/themes/foce-child/assets/images/banner.png" alt="image banniere fleurs d'oranger & chats errants">
         <img class="banner__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-        <video src="wp-content/themes/foce-child/assets/video/Studio+Koukaki-vidéo+header+sans+son.mp4" width="1440" autoplay muted loop></video>
+        <video src="wp-content/themes/foce-child/assets/video/Studio+Koukaki-vidéo+header+sans+son.mp4" width="100%" autoplay muted loop></video>
     </section>
     <section id="histoire" class="histoire">
         <h2><span class="animation-titre-story">L'histoire</span></h2>

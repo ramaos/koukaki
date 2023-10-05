@@ -1,20 +1,22 @@
+// recuperation des elements
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.getElementById("main-navigation");
 const ul = document.querySelector(".menu__content");
 const linkFooter = document.querySelector(".menu__content--link-footer");
 const links = document.querySelectorAll(".menu__content ul li");
+//au click sur le bouton burger
 menuToggle.addEventListener("click", function () {
   nav.classList.toggle("active");
   ul.classList.toggle("apparence-menu");
 });
-
+// au click sur les liens
 links.forEach(function (link) {
   link.addEventListener("click", function () {
     nav.classList.remove("active");
     ul.classList.remove("apparence-menu");
   });
 });
-
+// au click sur le link footer
 linkFooter.addEventListener("click", function () {
   nav.classList.remove("active");
   ul.classList.remove("apparence-menu");
