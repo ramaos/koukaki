@@ -248,7 +248,7 @@ body {
 .menu__content--characters::after {
   content: url("../assets/images/random_flower.png");
   position: absolute;
-  left: 63rem;
+  left: 59rem;
   top: 5rem;
   animation: rotation 10s linear infinite;
   @media all and (max-width: 700px) {
@@ -509,7 +509,6 @@ h2::after {
 #characters {
   position: relative;
   justify-content: flex-start;
-
   margin-top: 10rem;
   z-index: 20;
   h3 {
@@ -550,7 +549,8 @@ h2::after {
         left: 30%;
       }
       @media all and (max-width: 480px) {
-        left: 23%;
+        font-size: calc(2rem + 0.1vw);
+        left: 18%;
         top: 34%;
       }
     }
@@ -684,9 +684,7 @@ h2::after {
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
+  justify-content: space-evenly;
   margin-top: 10rem;
   @media all and (max-width: 700px) {
     display: flex;
@@ -697,17 +695,36 @@ h2::after {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%;
-    height: 19rem;
+    width: 60%;
+    height: 20rem;
     background-image: url("../assets/images/orange_nomination.png");
     background-size: contain;
     opacity: 0.9;
+    @media all and (max-width: 1080px) and (min-width: 920px) {
+       width: 65%;
+       height: 18rem;
+    }
+    @media all and (max-width: 920px) and (min-width: 820px){
+      width: 65%;
+      height: 17rem;
+    }
+    @media all and (max-width: 820px) and (min-width: 700px){
+      width: 75%;
+    }
+    @media all and (max-width: 700px) and (min-width: 520px){
+      width: 80%;
+      height: 15rem;
+    }
+    @media all and (max-width: 520px){
+      width: 89%;
+      height: 13rem;
+    }
     span {
       position: absolute;
       text-align: left;
       width: 44rem;
       top: 25%;
-      left: 25%;
+      left: 15%;
       font-family: "Quicksand", sans-serif;
       font-size: calc(2.4rem + 0.1vw);
       font-weight: 700;
@@ -717,12 +734,12 @@ h2::after {
       opacity: 0;
       @media all and (max-width: 1350px) and (min-width: 1080px) {
         font-size: calc(2.5rem + 0.1vw);
-        left: 18%;
+        left: 8%;
       }
       @media all and (max-width: 1080px) and (min-width: 920px) {
         width: 35rem;
         font-size: calc(2.2rem + 0.1vw);
-        left: 15%;
+        left: 10%;
       }
       @media all and (max-width: 920px) and (min-width: 820px) {
         width: 35rem;
@@ -730,22 +747,32 @@ h2::after {
         left: 10%;
       }
       @media all and (max-width: 820px) and (min-width: 700px) {
-        width: 25rem;
+        width: 28rem;
         font-size: calc(1rem + 1.5vw);
-        line-height: 2rem;
-        left: 10%;
-      }
-      @media all and (max-width: 700px) and (min-width: 520px) {
-        width: 35rem;
-        font-size: calc(2rem + 0.1vw);
-        left: 10%;
-      }
-      @media all and (max-width: 520px) {
-        width: 20rem;
-        font-size: calc(1rem + 1.5vw);
-        line-height: 1.8rem;
+        line-height: 1.7rem;
         left: 10%;
         top: 35%;
+      }
+      @media all and (max-width: 700px) and (min-width: 520px) {
+        width: 26rem;
+        font-size: calc(0.9rem + 1.5vw);
+        line-height: 1.6rem;
+        left: 10%;
+        top: 35%;
+      }
+      @media all and (max-width: 520px) and (min-width:420px) {
+        width: 23rem !important;
+        font-size: calc(0.8rem + 1.5vw) !important;
+        line-height: 1.6rem;
+        left: 10%;
+        top: 30%;
+      }
+      @media all and (max-width: 420px){
+        width: 18rem;
+        font-size: calc(0.7rem + 1.5vw);
+        line-height: 1.4rem;
+        left: 10%;
+        top: 34%;
       }
     }
   }

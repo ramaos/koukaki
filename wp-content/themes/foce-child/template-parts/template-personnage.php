@@ -8,7 +8,7 @@ $args = array(
 );
 $characters_query = new WP_Query($args);
 ?>
-<h3><span class="animation-titre-characters">Les personnage</span></h3>
+<h3><span class="animation-titre-characters">Les personnages</span></h3>
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <?php
