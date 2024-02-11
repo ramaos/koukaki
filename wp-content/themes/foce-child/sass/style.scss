@@ -307,7 +307,7 @@ body {
   }
 }
 
-/*    apparence du menu deroulant     */
+/*    apparence du menu deroulant     *************************************************/
 .apparence-menu {
   animation: nav-up 2s both;
 }
@@ -325,7 +325,7 @@ body {
   transform: rotate(-45deg) translate(8px, -6px);
 }
 
-/****   code banner    *****/
+/****   code banner    ************************************************/
 .banner {
   box-sizing: border-box;
   position: relative;
@@ -391,7 +391,8 @@ body {
   animation: mov-banner 2s 300ms both;
 }
 
-/*** animation des fleurs ******/
+/*** animation des fleurs **************************************************/
+
 .story__article::after,
 h2::after,
 #studio h2::before,
@@ -856,7 +857,7 @@ h2::after {
     opacity: 1;
   }
 }
-/*    animation des sections et titres     */
+/*    animation des sections et titres     ********************************************************/
 .active-story {
   animation: mov-section 1.5s both;
 }
